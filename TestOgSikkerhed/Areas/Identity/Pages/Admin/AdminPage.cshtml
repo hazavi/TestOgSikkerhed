@@ -1,0 +1,35 @@
+@page
+@model TestOgSikkerhed.Areas.Identity.Pages.Admin.AdminPageModel
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="alert alert-info">
+    <p>Welcome to the admin dashboard. Here you can view all registered users and their roles.</p>
+</div>
+
+<h2>User Management</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>User ID</th>
+            <th>Roles</th>
+            <th>Email Confirmed</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <td>@user.Email</td>
+                <td>@user.Id</td>
+                <td>@user.Roles</td>
+                <td>@(user.EmailConfirmed ? "Yes" : "No")</td>
+            </tr>
+        }
+    </tbody>
+</table>

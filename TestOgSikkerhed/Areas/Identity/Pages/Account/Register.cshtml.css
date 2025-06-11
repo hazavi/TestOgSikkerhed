@@ -1,0 +1,100 @@
+/* Using the same styles as Login.cshtml.css */
+.login-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    background-color: white;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+    .login-header h1 {
+        font-weight: 600;
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 0.4rem;
+    }
+
+    .login-header p {
+        color: #6c757d;
+        font-size: 0.9rem;
+    }
+
+.form-floating {
+    margin-bottom: 1rem;
+}
+
+    .form-floating input {
+        border-radius: 6px;
+        border-color: #e0e0e0;
+        padding: 0.9rem 0.75rem;
+    }
+
+        .form-floating input:focus {
+            box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.12);
+            border-color: #86b7fe;
+        }
+
+.login-btn {
+    background-color: #0d6efd;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    padding: 0.6rem;
+    transition: all 0.2s ease;
+    color: #fff;
+    font-size: 1rem;
+}
+
+    .login-btn:hover {
+        background-color: #0b5ed7;
+        transform: translateY(-1px);
+    }
+
+.links-section {
+    margin-top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    text-align: center;
+}
+
+    .links-section a {
+        color: #0d6efd;
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color 0.2s ease;
+    }
+
+        .links-section a:hover {
+            color: #0b5ed7;
+            text-decoration: underline;
+        }
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 1.25rem 0;
+    color: #6c757d;
+    font-size: 0.85rem;
+}
+
+    .divider::before,
+    .divider::after {
+        content: "";
+        flex: 1;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .divider::before {
+        margin-right: 0.6rem;
+    }
+
+    .divider::after {
+        margin-left: 0.6rem;
+    }
