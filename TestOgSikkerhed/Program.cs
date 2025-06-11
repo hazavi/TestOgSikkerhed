@@ -67,3 +67,8 @@ using (var scope = app.Services.CreateScope())
 }
 
 app.Run();
+
+
+//# Generate a development certificate
+//dotnet dev-certs https --clean
+//dotnet dev-certs https --trust

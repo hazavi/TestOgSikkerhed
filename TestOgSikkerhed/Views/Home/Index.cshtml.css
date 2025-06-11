@@ -1,0 +1,110 @@
+﻿/* General Styles */
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-weight: 700;
+    color: #333;
+}
+
+
+
+/* Authenticated User Styles */
+.welcome-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, #0d6efd, #6610f2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.welcome-subtitle {
+    font-size: 1.25rem;
+    color: #6c757d;
+    margin-bottom: 2rem;
+}
+
+/* Unauthenticated User Styles */
+.hero-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #0d6efd, #6610f2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #6c757d;
+    margin-bottom: 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+
+/* Game Section */
+.game-section {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.game-container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.flappy-game {
+    width: 100%;
+    height: 600px;
+    border: none;
+}
+
+.game-instruction {
+    margin-top: 1rem;
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .welcome-title {
+        font-size: 2rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .flappy-game {
+        height: 400px;
+    }
+}

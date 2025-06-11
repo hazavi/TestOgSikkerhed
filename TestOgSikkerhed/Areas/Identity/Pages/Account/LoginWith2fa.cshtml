@@ -6,12 +6,43 @@
 
 <h1>@ViewData["Title"]</h1>
 <hr />
-<p>Your login is protected with an authenticator app. Enter your authenticator code below.</p>
+
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
+        <p>Your login is protected with an authenticator app. Please scan the QR code and enter your authenticator code below.</p>
+
+        @if (Model.ShowQrCode)
+        {
+            <div class="mb-4">
+                <h4>Set up Microsoft Authenticator</h4>
+                <ol class="list">
+                    <li>
+                        <p>
+                            Download Microsoft Authenticator for
+                            <a href="https://go.microsoft.com/fwlink/?Linkid=825072" target="_blank">Android</a> or
+                            <a href="https://go.microsoft.com/fwlink/?Linkid=825073" target="_blank">iOS</a>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Scan the QR code below or enter this key <kbd>@Model.SharedKey</kbd> into your authenticator app.</p>
+                        <div class="qr-code-container text-center mb-3">
+                            @if (!string.IsNullOrEmpty(Model.QrCodeImageSource))
+                            {
+                                <img src="@Model.QrCodeImageSource" alt="QR Code" class="qr-code" />
+                            }
+                        </div>
+                    </li>
+                    <li>
+                        <p>Enter the 6-digit code from your authenticator app below.</p>
+                    </li>
+                </ol>
+            </div>
+        }
+
         <form method="post" asp-route-returnUrl="@Model.ReturnUrl">
             <input asp-for="RememberMe" type="hidden" />
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            
             <div class="form-floating mb-3">
                 <input asp-for="Input.TwoFactorCode" class="form-control" autocomplete="off" />
                 <label asp-for="Input.TwoFactorCode" class="form-label"></label>
@@ -33,6 +64,31 @@
     Don't have access to your authenticator device? You can
     <a id="recovery-code-login" asp-page="./LoginWithRecoveryCode" asp-route-returnUrl="@Model.ReturnUrl">log in with a recovery code</a>.
 </p>
+
+<style>
+    .qr-code-container {
+        background-color: white;
+        padding: 15px;
+        display: inline-block;
+        margin: 0 auto;
+    }
+    .qr-code {
+        width: 200px;
+        height: 200px;
+    }
+    kbd {
+        background-color: #f7f7f7;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+        color: #333;
+        display: inline-block;
+        font-size: 0.9em;
+        line-height: 1.4;
+        padding: 2px 4px;
+        white-space: nowrap;
+    }
+</style>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
